@@ -18,18 +18,19 @@ const startServer = async () => {
     SHUTDOWN_SIGNALS.forEach((signal) => {
       process.on(signal, async () => {
         try {
-          server.log.warn("Closing Server Gracefully!!!");
+          server.log.warn("❌❌❌ Shutting down server ❌❌❌");
           await server.close();
-          process.exit(1);
-        } catch (error) {
-          server.log.warn("Closing Server Gracefully!!!");
           process.exit(0);
+        } catch (error) {
+          server.log.warn("❌❌❌ Shutting down server ❌❌❌");
+          process.exit(1);
         }
       });
     });
   } catch (error) {
+    console.log("❌❌❌ Shutting down server ❌❌❌");
     console.error({ ...(error as any) });
-    process.exit(0);
+    process.exit(1);
   }
 };
 
