@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "pretty": true,
+    "newLine": "lf",
+    "lib": ["esnext"],
+    "target": "ESNext",
+    "declaration": true,
+    "module": "NodeNext",
+    "skipLibCheck": true,
+    "alwaysStrict": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "NodeNext",
+    "useDefineForClassFields": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {"@/*": ["*"] },
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "include": ["./src/" ],
+  "exclude": ["./dist", ".vscode", "node_modules"]
+}

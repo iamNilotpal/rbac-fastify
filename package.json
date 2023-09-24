@@ -1,0 +1,36 @@
+{
+  "name": "rbac-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.16.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "migrate": "drizzle-kit generate:pg",
+    "dev": "nodemon --watch src src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/http-errors": "^2.0.2",
+    "@types/node": "^20.6.2",
+    "drizzle-kit": "^0.19.13",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.28.6",
+    "fastify": "^4.23.2",
+    "http-errors": "^2.0.0",
+    "pino": "^8.15.1",
+    "pino-pretty": "^10.2.0",
+    "postgres": "^3.3.5",
+    "zod": "^3.22.2"
+  }
+}
