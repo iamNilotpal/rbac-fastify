@@ -48,7 +48,7 @@ export const roles = pgTable(
 );
 
 export const usersToRoles = pgTable(
-  "usersToRoles",
+  "users_to_roles",
   {
     applicationId: uuid("applicationId")
       .references(() => applications.id)
