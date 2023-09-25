@@ -20,26 +20,21 @@ export const ALL_PERMISSIONS = [
   "applications:delete",
 ] as const;
 
-export const PERMISSIONS = ALL_PERMISSIONS.reduce((acc, permission) => {
+export const PERMISSIONS_CONFIG = ALL_PERMISSIONS.reduce((acc, permission) => {
   acc[permission] = permission;
   return acc;
 }, {} as Record<PermissionType, PermissionType>);
 
 export const USER_PERMISSIONS = [
-  PERMISSIONS["users:read"],
-  PERMISSIONS["users:create"],
-  PERMISSIONS["users:delete"],
-  PERMISSIONS["users:update"],
+  PERMISSIONS_CONFIG["users:read"],
+  PERMISSIONS_CONFIG["users:create"],
+  PERMISSIONS_CONFIG["users:delete"],
+  PERMISSIONS_CONFIG["users:update"],
 ] as const;
 
 export const APPLICATIONS_PERMISSIONS = [
-  PERMISSIONS["applications:read"],
-  PERMISSIONS["applications:update"],
-  PERMISSIONS["applications:delete"],
-  PERMISSIONS["applications:create"],
+  PERMISSIONS_CONFIG["applications:read"],
+  PERMISSIONS_CONFIG["applications:update"],
+  PERMISSIONS_CONFIG["applications:delete"],
+  PERMISSIONS_CONFIG["applications:create"],
 ] as const;
-
-export enum SYSTEM_ROLES {
-  SUPER_ADMIN = "SUPER_ADMIN",
-  APPLICATION_USER = "APPLICATION_USER",
-}

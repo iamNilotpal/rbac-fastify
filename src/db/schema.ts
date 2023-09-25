@@ -22,7 +22,9 @@ export const users = pgTable(
     name: varchar("name", { length: 256 }).notNull(),
     email: varchar("email", { length: 256 }).notNull(),
     password: varchar("password", { length: 50 }).notNull(),
-    applicationId: uuid("applicationId").references(() => applications.id),
+    applicationId: uuid("applicationId")
+      .references(() => applications.id)
+      .notNull(),
     created_at: timestamp("created_at", { withTimezone: true }).defaultNow(),
     updated_at: timestamp("updated_at", { withTimezone: true }).defaultNow(),
   },
@@ -36,9 +38,11 @@ export const roles = pgTable(
   {
     id: uuid("id").unique("role_id_index").notNull().defaultRandom(),
     name: varchar("name", { length: 256 }).notNull(),
-    permissions: text("permissions").array().$type<Array<string>>(),
+    permissions: text("permissions").array().$type<Array<string>>().notNull(),
     description: varchar("description", { length: 1024 }).notNull(),
-    applicationId: uuid("applicationId").references(() => applications.id),
+    applicationId: uuid("applicationId")
+      .references(() => applications.id)
+      .notNull(),
     created_at: timestamp("created_at", { withTimezone: true }).defaultNow(),
     updated_at: timestamp("updated_at", { withTimezone: true }).defaultNow(),
   },

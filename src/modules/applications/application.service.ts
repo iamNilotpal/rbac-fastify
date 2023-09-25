@@ -1,19 +1,25 @@
 import { applications } from "@/db/schema";
 import { db } from "@/lib/database";
-import { InferInsertModel } from "drizzle-orm";
-import { IApplicationsService } from "./applications.interface";
+import {
+  ApplicationPayload,
+  IApplicationsService,
+} from "./applications.interface";
 
 class ApplicationsService implements IApplicationsService {
-  async create(payload: InferInsertModel<typeof applications>) {
+  async create(
+    payload: ApplicationPayload
+  ): Promise<ApplicationPayload | undefined> {
     const data = await db.insert(applications).values(payload).returning();
-    return data[0];
+    return data.at(0);
   }
 
-  async getApplications(limit: number, page: number) {
+  async getApplications(
+    limit: number,
+    page: number
+  ): Promise<ApplicationPayload[]> {
     const internalLimit = limit && limit <= 10 ? limit : 10;
     const offset = internalLimit * page;
-
-    const allApplications = await db
+    return db
       .select({
         id: applications.id,
         name: applications.name,
@@ -24,9 +30,7 @@ class ApplicationsService implements IApplicationsService {
       .from(applications)
       .limit(internalLimit)
       .offset(offset);
-
-    return allApplications;
   }
 }
 
-export default new ApplicationsService();
+export default ApplicationsService;

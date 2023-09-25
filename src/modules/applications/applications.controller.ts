@@ -1,19 +1,21 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import applicationService from "./application.service";
 import {
   ApplicationPayload,
   IApplicationsService,
 } from "./applications.interface";
 
 class ApplicationsController {
-  constructor(private service: IApplicationsService) {}
+  constructor(private applicationService: IApplicationsService) {}
 
   async getAllApplications(
     req: FastifyRequest<{ Params: { limit: number; page: number } }>,
     reply: FastifyReply
   ) {
     const { limit, page } = req.params;
-    const applications = await this.service.getApplications(limit, page);
+    const applications = await this.applicationService.getApplications(
+      limit,
+      page
+    );
     return reply.code(200).send(applications);
   }
 
@@ -22,9 +24,9 @@ class ApplicationsController {
     reply: FastifyReply
   ) {
     const payload = req.body;
-    const application = await this.service.create(payload);
+    const application = await this.applicationService.create(payload);
     return reply.code(201).send(application);
   }
 }
 
-export default new ApplicationsController(applicationService);
+export default ApplicationsController;
