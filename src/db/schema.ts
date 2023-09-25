@@ -63,8 +63,8 @@ export const usersToRoles = pgTable(
   (usersToRoles) => ({
     cpk: primaryKey(
       usersToRoles.userId,
-      usersToRoles.applicationId,
-      usersToRoles.roleId
+      usersToRoles.roleId,
+      usersToRoles.applicationId
     ),
   })
 );
