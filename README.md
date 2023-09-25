@@ -43,8 +43,10 @@ Builds the app for production to the **`dist`** folder.
 ## Update your .env file
 
 ```bash
-  APP_PORT=
-  APP_HOST=
-  NODE_ENV=
-  DATABASE_URL=
+APP_PORT=
+APP_HOST=
+NODE_ENV=
+APP_BASE_URL=
+DATABASE_URL=
+APP_LOG_LEVEL=
 ```
