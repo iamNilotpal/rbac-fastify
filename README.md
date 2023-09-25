@@ -5,7 +5,7 @@
 **`HTTPS`**
 
 ```bash
-  git clone https://github.com/iamNilotpal/fastify-rest-api.git
+git clone https://github.com/iamNilotpal/fastify-rest-api.git
 ```
 
 **Update Node Version**
@@ -20,7 +20,7 @@ node version and ensure you have the most recent version (18.16.0) chosen.
 **Installing Dependencies**
 
 ```bash
-  yarn install
+yarn install
 ```
 
 ## Available Scripts
@@ -28,14 +28,14 @@ node version and ensure you have the most recent version (18.16.0) chosen.
 In the project directory, you can run:
 
 ```bash
-  npm run dev
+npm run dev
 ```
 
 Runs the app in the development mode
 [http://localhost:3001](http://localhost:3001)
 
 ```bash
-  npm run build
+npm run build
 ```
 
 Builds the app for production to the **`dist`** folder.
@@ -43,8 +43,10 @@ Builds the app for production to the **`dist`** folder.
 ## Update your .env file
 
 ```bash
-  APP_PORT=
-  APP_HOST=
-  NODE_ENV=
-  DATABASE_URL=
+APP_PORT=
+APP_HOST=
+NODE_ENV=
+APP_BASE_URL=
+DATABASE_URL=
+APP_LOG_LEVEL=
 ```
