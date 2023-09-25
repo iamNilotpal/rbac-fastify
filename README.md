@@ -5,7 +5,7 @@
 **`HTTPS`**
 
 ```bash
-git clone https://github.com/iamNilotpal/fastify-rest-api.git
+git clone https://github.com/iamNilotpal/rbac-fastify.git
 ```
 
 **Update Node Version**

@@ -11,8 +11,8 @@ export const applications = pgTable("applications", {
   name: varchar("name", { length: 256 }).notNull(),
   id: uuid("id").primaryKey().notNull().defaultRandom(),
   description: varchar("description", { length: 1024 }).notNull(),
-  created_at: timestamp("created_at", { withTimezone: true }).defaultNow(),
   updated_at: timestamp("updated_at", { withTimezone: true }).defaultNow(),
+  created_at: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });
 
 export const users = pgTable(
