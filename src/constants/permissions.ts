@@ -1,4 +1,4 @@
-import { PermissionType } from "@/types/permissions";
+import { Permissions } from "@/types/permissions";
 
 export const ALL_PERMISSIONS = [
   // USERS PERMISSIONS
@@ -23,7 +23,7 @@ export const ALL_PERMISSIONS = [
 export const PERMISSIONS_CONFIG = ALL_PERMISSIONS.reduce((acc, permission) => {
   acc[permission] = permission;
   return acc;
-}, {} as Record<PermissionType, PermissionType>);
+}, {} as Record<Permissions, Permissions>);
 
 export const USER_PERMISSIONS = [
   PERMISSIONS_CONFIG["users:read"],
