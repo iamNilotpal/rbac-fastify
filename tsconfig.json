@@ -23,5 +23,5 @@
     "require": ["tsconfig-paths/register"]
   },
   "include": ["./src/" ],
-  "exclude": ["./dist", ".vscode", "node_modules"]
+  "exclude": ["./dist", ".vscode", "node_modules"],
 }
